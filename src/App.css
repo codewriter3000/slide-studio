@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: transparent }
+
+:root {
+  color: #f6f6f6;
+  background-color: #2f2f2f99;
+  font-family: 'Manrope', sans-serif;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/manrope/Manrope-Regular.otf') format('otf');
+}
