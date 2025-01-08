@@ -1,0 +1,3 @@
+.slide-view-slide {
+    @apply border w-full h-40 m-4;
+}

@@ -1,27 +1,110 @@
 import React from "react";
 import "./ribbon.css";
-import { RibbonItem } from "../../components";
+
+import { fonts, fontSizes, presentOptions, saveOptions } from "./constants";
+
+import RibbonButton from "./RibbonButton";
+import RibbonDropdown from "./RibbonDropdown";
+import RibbonMenu from "./RibbonMenu";
+import RibbonToggleButton from "./RibbonToggleButton";
 
 const Ribbon = () => {
+  const ribbons = [
+    {
+      name: "Font Name",
+      control: "dropdown",
+      items: fonts,
+    },
+    {
+      name: "Font Size",
+      control: "dropdown",
+      items: fontSizes,
+    },
+    {
+      name: "Font Color",
+      control: "color",
+    },
+    {
+      control: "divider",
+    },
+    {
+      name: "Bold",
+      icon: "bold",
+      control: "toggle",
+    },
+    {
+      name: "Italic",
+      icon: "italic",
+      control: "toggle",
+      size: 8,
+    },
+    {
+      name: "Underline",
+      icon: "underline",
+      control: "toggle",
+    },
+    {
+      control: "divider",
+    },
+    {
+      name: "Add Shape",
+      icon: "add-shape",
+      size: 20,
+    },
+    {
+      name: "Add Image",
+      icon: "add-image",
+      size: 20,
+    },
+    {
+      name: "Add Textbox",
+      icon: "add-textbox",
+      size: 20,
+    },
+    {
+      control: "divider",
+    },
+    {
+      name: "Present",
+      control: "menu",
+      icon: "present",
+      items: presentOptions,
+    },
+    {
+      control: "divider",
+    },
+    {
+      name: "Open Presentation",
+      icon: "open",
+      size: 20,
+    },
+    {
+      name: "Save Presentation",
+      control: "menu",
+      icon: "save",
+      items: saveOptions,
+    },
+  ];
+
   return (
-    // <div className="ribbon h-12 flex gap-x-4 bg-zinc-800/80 rounded-lg text-black">
-    //   {/* <RibbonItem>New Presentation</RibbonItem>
-    //   <RibbonItem>Open Presentation</RibbonItem>
-    //   <RibbonItem>Save</RibbonItem>
-    //   <RibbonItem>Save As</RibbonItem>
-    //   <RibbonItem>Export</RibbonItem> */}
-    //   <RibbonItem>New Slide</RibbonItem>
-    //   {"|"}
-    //   <RibbonItem>Bold</RibbonItem>
-    //   <RibbonItem>Italic</RibbonItem>
-    //   <RibbonItem>Underline</RibbonItem>
-    //   {"|"}
-    //   <RibbonItem>Add Slide</RibbonItem>
-    //   <RibbonItem>Add Image</RibbonItem>
-    //   <RibbonItem>Add Shape</RibbonItem>
-    // </div>
-    <div className="h-12 align-center border border-white flex-grow mx-52">
-      Ribbon
+    <div className="ribbon">
+      {ribbons.map((ribbon, index) => (
+        <>
+          {ribbon.control === "divider" && <div className="divider" />}
+          {ribbon.control === "dropdown" && (
+            <RibbonDropdown
+              key={index}
+              className={ribbon?.className || ""}
+              {...ribbon}
+            />
+          )}
+          {ribbon.control === "menu" && <RibbonMenu key={index} {...ribbon} />}
+          {ribbon.control === "toggle" && (
+            <RibbonToggleButton key={index} {...ribbon} />
+          )}
+          {!ribbon.control && <RibbonButton key={index} {...ribbon} />}
+        </>
+      ))}
     </div>
   );
 };

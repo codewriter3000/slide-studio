@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const slideSlice = createSlice({
     name: 'slide',
     initialState: {
-        currentSlide: 0
+        currentSlide: 0,
+        slideData: [],
     },
     reducers: {
         nextSlide: state => {
@@ -14,6 +15,12 @@ const slideSlice = createSlice({
         },
         goToSlide: (state, action) => {
             state.currentSlide = action.payload;
+        },
+        createNewSlide: (state, action) => {
+            state.slideData = [...state.slideData, action.payload];
+        },
+        writeSlideData: (state, action) => {
+            state.slideData = action.payload;
         }
     }
 });

@@ -1,0 +1,60 @@
+.ribbon {
+    @apply h-12 rounded-xl flex content-center
+    justify-self-center px-6;
+
+    background-color: #2c2c2c;
+    height: 3rem;
+}
+
+.divider {
+    background-color: #3c3c3c99;
+    width: 5px;
+    height: 100%;
+}
+
+.ribbon-button {
+    width: 40px;
+    @apply flex items-center justify-center;
+}
+
+*:is(.ribbon-button:hover) {
+    background-color: #242424;
+    @apply border rounded-md;
+    border-color: #3f3f3f;
+}
+
+/* .ribbon-menu {
+    width: 50px;
+    position: relative;
+    @apply flex items-center justify-center;
+} */
+
+*:is(   .ribbon-button--toggled,
+        .ribbon-button--toggled:hover,) {
+    background-color: #141414;
+    @apply border rounded-md;
+    border-color: #3f3f3f;
+}
+
+.ribbon-dropdown {
+    position: relative;
+}
+
+*:is(.ribbon-dropdown--selected, .ribbon-menu--toggled) {
+    @apply flex px-1;
+    /* padding: 0.5rem 1rem; */
+    background-color: #2c2c2c;
+    height: 3rem;
+    z-index: 100;
+}
+
+.ribbon-dropdown--selected--text {
+    margin: auto;
+}
+
+:is(.ribbon-dropdown--item, .ribbon-menu--item) {
+    @apply flex items-center justify-start border-b;
+    padding: 0.5rem 1rem;
+    background-color: #2c2c2c;
+    z-index: 100;
+}

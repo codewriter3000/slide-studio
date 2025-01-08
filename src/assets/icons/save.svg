@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 0.5H14.7929L19.5 5.20711V19.5H0.5V0.5Z" stroke="white"/>
+<line x1="12.5" y1="1" x2="12.5" y2="5" stroke="white"/>
+<line x1="14.5" y1="12" x2="14.5" y2="19" stroke="white"/>
+<line x1="4.5" y1="12" x2="4.5" y2="19" stroke="white"/>
+<line x1="5.5" y1="1" x2="5.5" y2="5" stroke="white"/>
+<line x1="13" y1="5.5" x2="5" y2="5.5" stroke="white"/>
+<line x1="14" y1="12.5" x2="4" y2="12.5" stroke="white"/>
+</svg>

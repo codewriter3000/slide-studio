@@ -1,0 +1,11 @@
+.leftbar-toolbar-button {
+    @apply mx-2 mt-2 h-20 w-20 border rounded-xl;
+}
+
+.leftbar-toolbar-button__icon {
+    @apply h-20 w-20 p-2;
+}
+
+.leftbar-toolbar-button:hover {
+    @apply bg-gray-200/20 cursor-pointer;
+}

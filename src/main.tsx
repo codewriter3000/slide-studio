@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import { Provider } from "react-redux";
-import store from "./store";
+import { store } from "./store";
 
 // when using `"withGlobalTauri": true`, you may use
 // const { getCurrentWindow } = window.__TAURI__.window;
